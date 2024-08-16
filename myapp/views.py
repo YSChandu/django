@@ -4,8 +4,7 @@ from django.http import HttpResponse
 def index(request):
     return render(request ,'home.html')
 
-
 def counter(request):
-    words = request.GET['words']
+    words = request.POST['words']
     amount_of_words = len(words.split())
     return render(request,'counter.html',{'amount':amount_of_words})
